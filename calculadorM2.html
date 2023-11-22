@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculador de metros cuadrados HTML</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <div>Compatible con Tiendanube</div>
+    <div class="user-content font-small mb-4">
+        <div class="calculator" style="margin-top: 20px;">
+        <h2>Calculadora de M2</h2>
+        <h6 style="width: 100%; text-align: left;">Ingresa el ALTO y ANCHO de la superficie a cubrir.</h6>
+        <label style="margin-right: 13px;" for="alto">Alto:</label> <input id="alto" min="0" step="0.01" type="number" value="0" /> <br /><label style="margin-right: 0px;" for="ancho">Ancho:</label> <input id="ancho" min="0" step="0.01" type="number" value="0" /><br /><button id="calcularButton" style="margin-left: 45px; margin-top: 10px;">Calcular</button>
+        <div id="resultado" class="result" style="font-weight: bold; margin-top: 20px; font-size: 20px; color: red;">Total metros cuadrados: 0</div>
+        <div id="carrito" class="cart">Agrega al carrito esta cantidad de m2 para ver el valor.&nbsp;</div>
+        </div>
+        <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                var calcularButton = document.getElementById('calcularButton');
+                
+                calcularButton.addEventListener('click', function () {
+                  var alto = parseFloat(document.getElementById('alto').value);
+                  var ancho = parseFloat(document.getElementById('ancho').value);
+                  var metrosCuadrados = Math.ceil(alto * ancho);
+                  var valorTotal = metrosCuadrados * 8500;
+                  document.getElementById('resultado').innerHTML = 'Metros cuadrados: ' + metrosCuadrados;
+                  document.getElementById('carrito').innerHTML = 'Agrega al carrito esta cantidad de m2 para ver el valor. Realizamos instalaciones en CABA y alrededores. También hacemos envíos a todo ARGENTINA';
+                });
+              });
+            </script>
+        </div>
+</body>
+</html>
